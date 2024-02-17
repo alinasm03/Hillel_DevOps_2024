@@ -1,0 +1,41 @@
+- name: Create new user and install packages
+  hosts: test_server
+  become: yes #to run tasks with sudo
+  
+
+  tasks: 
+    - name: Create new user 
+      user: 
+        name: hillel
+        group: sudo
+
+    - name: Install nginx
+      package:
+          name: nginx
+          state: present
+          update_cache: yes
+    
+    - name: Install git
+      package:
+          name: git
+          state: latest
+          update_cache: yes
+
+    - name: Install zip
+      package:
+          name: zip
+          state: latest
+          update_cache: yes
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+    
+    - name: Retart nginx
+      service:
+        name: nginx
+        state: restarted
+        enabled: yes
+        

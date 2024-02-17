@@ -1,0 +1,29 @@
+- name: Delete user and uninstall packages
+  hosts: test_server
+  become: yes #to run tasks with sudo
+
+  tasks: 
+    - name: Delete user 'hillel' 
+      user: 
+        name: hillel
+        state: absent
+
+    - name: Stop nginx
+      service:
+        name: nginx
+        state: stopped
+
+    - name: Uninstall nginx
+      package:
+        name: nginx
+        state: absent
+    
+    - name: Uninstall git
+      package:
+        name: git
+        state: absent
+
+    - name: Uninstall zip
+      package:
+        name: zip
+        state: absent  
