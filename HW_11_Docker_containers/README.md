@@ -14,7 +14,7 @@ docker run -d --name nginx-ubuntu_cont1 -p 8080:80 -i -t nginx-ubuntu
 
 # Commit(tag) and push image to DockerHub
 
-1. docker tag 9ffdb07ab129 alinasmirnova0303/nginx-ubuntu
+1. docker tag nginx-ubuntu alinasmirnova0303/nginx-ubuntu
 
 2. docker push alinasmirnova0303/nginx-ubuntu
 
