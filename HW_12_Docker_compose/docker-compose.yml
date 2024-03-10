@@ -1,7 +1,6 @@
 services: 
   nginx:
     container_name: nginx-ubuntu_cont1
-    image: nginx-ubuntu
     build: 
       context: ../HW_11_Docker_containers
       dockerfile: Dockerfile
